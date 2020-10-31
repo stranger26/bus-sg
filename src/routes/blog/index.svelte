@@ -18,10 +18,10 @@
 </style>
 
 <svelte:head>
-	<title>Blog</title>
+	<title>API</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<h1>Available APIs</h1>
 
 <ul>
 	{#each posts as post}
