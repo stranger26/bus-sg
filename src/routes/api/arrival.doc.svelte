@@ -22,7 +22,7 @@
 	<title>API</title>
 </svelte:head>
 
-<h1>Available APIs</h1>
+<h1>Bus Arrival</h1>
 
 <ul>
 	{#each posts.Services as post}
