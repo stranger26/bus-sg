@@ -1,6 +1,10 @@
+<!--
+TODO refactor this to show list of docs pages
+-->
+
 <script context="module">
 	export function preload() {
-		return this.fetch(`api/arrival`).then(r => r.json()).then(posts => {
+		return this.fetch(`api/arrival?day=1`).then(r => r.json()).then(posts => {
 			return { posts };
 		});;
 	}
@@ -8,7 +12,7 @@
 
 <script>
 	export let posts;
-	console.log(posts)
+	// console.log(posts)
 </script>
 
 <style>

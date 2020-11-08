@@ -1,6 +1,6 @@
 <script context="module">
 	export function preload() {
-		return this.fetch(`api/arrival`).then(r => r.json()).then(posts => {
+		return this.fetch(`api/arrival?day=1`).then(r => r.json()).then(posts => {
 			return { posts };
 		});;
 	}
@@ -8,7 +8,7 @@
 
 <script>
 	export let posts;
-	console.log(posts)
+	// console.log(posts)
 </script>
 
 <style>
@@ -19,7 +19,7 @@
 </style>
 
 <svelte:head>
-	<title>API</title>
+	<title>Bus Arrival | API Docs</title>
 </svelte:head>
 
 <h1>Bus Arrival</h1>
