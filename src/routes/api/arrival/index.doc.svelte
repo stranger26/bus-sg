@@ -1,6 +1,6 @@
 <script context="module">
 	export function preload() {
-		return this.fetch(`api/arrival?day=1`).then(r => r.json()).then(posts => {
+		return this.fetch(`api/arrival/33491`).then(r => r.json()).then(posts => {
 			return { posts };
 		});;
 	}
@@ -23,7 +23,13 @@
 </svelte:head>
 
 <h1>Bus Arrival</h1>
-
+<!--TODO
+API endpoint
+Usage
+Input
+Output
+Errors?
+-->
 <ul>
 	{#each posts.Services as post}
 		<!--we're using the non-standard `rel=prefetch` attribute to
