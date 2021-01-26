@@ -1,8 +1,16 @@
 <script>
-	let isDarkMode = false;
+	import { isDarkMode } from '../stores';
+
+	let isDarkMode_value;
+	const unsubscribe = isDarkMode.subscribe(value => {
+		isDarkMode_value = value;
+		typeof window !== "undefined" && localStorage.setItem("isDarkMode", value);
+	});
+
 	function toggleDarkMode() {
-		isDarkMode = !isDarkMode;
-		window.document.body.classList.toggle('dark-mode');
+		if (isDarkMode_value==1) {window.document.body.classList.add('dark-mode');}
+		else {window.document.body.classList.remove('dark-mode');}
+		isDarkMode.update(n => n==1 ? 2 : 1);
 	}
 </script>
 
@@ -13,4 +21,4 @@
 	}
 </style>
 
-<a on:click={toggleDarkMode}>{#if isDarkMode}turn on the light{:else}turn off the light{/if}</a>
+<a on:click={toggleDarkMode}>{#if isDarkMode_value==1}turn off the light{:else}turn on the light{/if}</a>
