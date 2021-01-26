@@ -1,4 +1,6 @@
 <script>
+	import DarkModeToggle from '../components/DarkModeToggle.svelte';
+
 	export let segment;
 </script>
 
@@ -7,6 +9,13 @@
 		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
 		padding: 0 1em;
+	}
+
+	nav.nav-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	ul {
@@ -48,7 +57,7 @@
 	}
 </style>
 
-<nav>
+<nav class="nav-header">
 	<ul>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
 		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
@@ -57,4 +66,5 @@
 		     the blog data when we hover over the link or tap it on a touchscreen -->
 		<li><a rel=prefetch aria-current="{segment === 'api' ? 'page' : undefined}" href="api">api</a></li>
 	</ul>
+	<DarkModeToggle />
 </nav>
