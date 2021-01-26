@@ -8,8 +8,8 @@
 
 <script>
 	import moment from 'moment';
-	let busNoInput = 0;
-	let busno = 0;
+	let busNoInput = null;
+	let busno = null;
 	// console.log(posts)
 	let posts = {'Services':[]};
 
@@ -35,7 +35,7 @@
 	<title>Bus Arrival | API Docs</title>
 </svelte:head>
 
-<h1>Bus Arrival for Bus {busno} ({posts.BusStopCode})</h1>
+<h1>Bus Arrival for Bus Stop {#if busno}{busno}{/if}</h1>
 <!--TODO
 API endpoint
 Usage
@@ -53,6 +53,6 @@ Errors?
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event
 		<li><a rel="prefetch" href="api/{post.slug}">{post.title}</a></li>-->
-		<li>{post.ServiceNo} coming in {moment(post.NextBus.EstimatedArrival).fromNow()}</li>
+		<li>{post.ServiceNo} {#if moment(post.NextBus.EstimatedArrival).isAfter(moment())}coming{:else}left{/if} {moment(post.NextBus.EstimatedArrival).fromNow()}{#if post.NextBus2.EstimatedArrival!=""}, next bus {#if moment(post.NextBus2.EstimatedArrival).isAfter(moment())}coming{:else}left{/if} {moment(post.NextBus2.EstimatedArrival).fromNow()}{/if}{#if post.NextBus3.EstimatedArrival!=""}, next bus {#if moment(post.NextBus3.EstimatedArrival).isAfter(moment())}coming{:else}left{/if} {moment(post.NextBus3.EstimatedArrival).fromNow()}{/if}</li>
 	{/each}
 </ul>
