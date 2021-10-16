@@ -1,7 +1,7 @@
 <script>
 	import Nav from '$lib/Nav.svelte';
 	import { page, navigating } from '$app/stores';
-	import '$lib/assets/global.css';
+	import '/static/global.css';
 
 	$: section = $page.path.split('/')[1];
 </script>
