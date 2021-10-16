@@ -54,7 +54,7 @@
 
 <nav class="nav-header">
 	<ul>
-		<li><a aria-current={section === undefined ? 'page' : undefined} href="/" class="nav-img"><img src="/static/bus-128.svg" alt="BUS SG" id="nav-logo"></a></li>
+		<li><a aria-current={section === undefined ? 'page' : undefined} href="/" class="nav-img"><img src="/assets/bus-128.svg" alt="BUS SG" id="nav-logo"></a></li>
 		<li><a aria-current={section === "about" ? 'page' : undefined} href="/about">about</a></li>
 
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches

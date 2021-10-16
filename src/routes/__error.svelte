@@ -36,7 +36,7 @@
 
 <div class="error-msg">
 	<div>
-		<img src="/static/error.svg" alt="Error" />
+		<img src="/assets/error.svg" alt="Error" />
 		<h1>{title}</h1>
 		<p>{msg}</p>
 	</div>
