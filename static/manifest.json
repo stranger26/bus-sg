@@ -8,12 +8,12 @@
 	"id": "/",
 	"icons": [
 		{
-			"src": "bus-128.png",
+			"src": "/src/lib/assets/bus-128.png",
 			"sizes": "128x128",
 			"type": "image/png"
 		},
 		{
-			"src": "bus-512.png",
+			"src": "/src/lib/assets/bus-512.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}
