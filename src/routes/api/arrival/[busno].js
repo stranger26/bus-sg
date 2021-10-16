@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { variables } from '$lib/viteenv';
 
 export async function get(req, res) {
 	const { busno } = req.params;
@@ -7,7 +8,7 @@ export async function get(req, res) {
 	    headers: {
 	      "Content-type": "application/json",
 	      "charset": "UTF-8",
-	      "AccountKey": import.meta.env.VITE_DATAMALL_API_TOKEN
+	      "AccountKey": variables.DatamallAPIToken
 	    }
 	 }).then(r => r.data)
 
