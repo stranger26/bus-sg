@@ -1,0 +1,21 @@
+{
+	"background_color": "#ffffff",
+	"theme_color": "#333333",
+	"name": "SG BUS APP",
+	"short_name": "BUS SG",
+	"display": "minimal-ui",
+	"start_url": "/",
+	"id": "/",
+	"icons": [
+		{
+			"src": "bus-128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "bus-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
