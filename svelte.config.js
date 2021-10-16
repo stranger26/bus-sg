@@ -11,6 +11,9 @@ const config = {
 		adapter: vercel(),
 		files: {
 			serviceWorker: 'src/service-worker'
+		},
+		serviceWorker: {
+			files: (filepath) => !/\.DS_STORE/.test(filepath)
 		}
 	}
 };
