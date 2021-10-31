@@ -1,6 +1,7 @@
 /** @type {import('@sveltejs/kit').Config} */
 import importAssets from 'svelte-preprocess-import-assets'
 import vercel from '@sveltejs/adapter-vercel';
+import path from 'path'
 
 const config = {
 	extensions: ['.svelte', '.svlt'],
@@ -14,7 +15,15 @@ const config = {
 		},
 		serviceWorker: {
 			files: (filepath) => !/\.DS_STORE/.test(filepath)
-		}
+		},
+		vite: {
+            resolve: {
+                alias: {
+                    // these are the aliases and paths to them
+                    $routes: path.resolve('./src/routes')
+                }
+            }
+        }
 	}
 };
 
