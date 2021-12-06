@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@sveltejs/adapter-vercel': next
+  '@sveltejs/adapter-netlify': ^1.0.0-next.0
   '@sveltejs/kit': ^1.0.0-next.192
   axios: ^0.23.0
   dotenv: ^10.0.0
@@ -22,7 +22,7 @@ dependencies:
   path: 0.12.7
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.0-next.31
+  '@sveltejs/adapter-netlify': 1.0.0-next.0
   '@sveltejs/kit': 1.0.0-next.192_svelte@3.44.0
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
@@ -94,10 +94,10 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.31:
-    resolution: {integrity: sha512-W8p/U00B6ihVrDpwMkgEexfVUzaLmn4MRtXj//Gw4NDFfsrZR4P5wBidrOAIkCYBMvqCOHD+vbAvIiAMOaN23g==}
+  /@sveltejs/adapter-netlify/1.0.0-next.0:
+    resolution: {integrity: sha512-CxjWlGkNyQzEB9LsXN+MvF1Z+SHRb16cNZL8sy5bUcytDcf7ETjlgKdaxks7ygWBhI/wtx4Mcxr+uIt50p8vag==}
     dependencies:
-      esbuild: 0.13.7
+      toml: 3.0.0
     dev: true
 
   /@sveltejs/kit/1.0.0-next.192_svelte@3.44.0:
@@ -1156,6 +1156,10 @@ packages:
 
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
+    dev: true
+
+  /toml/3.0.0:
+    resolution: {integrity: sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==}
     dev: true
 
   /type-check/0.4.0:

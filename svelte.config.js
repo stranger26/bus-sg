@@ -1,6 +1,6 @@
 /** @type {import('@sveltejs/kit').Config} */
 import importAssets from 'svelte-preprocess-import-assets'
-import vercel from '@sveltejs/adapter-vercel';
+import netlify from '@sveltejs/adapter-netlify';
 import path from 'path'
 
 const config = {
@@ -9,7 +9,7 @@ const config = {
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-		adapter: vercel(),
+		adapter: netlify(),
 		files: {
 			serviceWorker: 'src/service-worker'
 		},
