@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@sveltejs/adapter-netlify': ^1.0.0-next.0
+  '@sveltejs/adapter-netlify': ^1.0.0-next.9
   '@sveltejs/kit': ^1.0.0-next.192
   axios: ^0.23.0
   dotenv: ^10.0.0
@@ -22,7 +22,7 @@ dependencies:
   path: 0.12.7
 
 devDependencies:
-  '@sveltejs/adapter-netlify': 1.0.0-next.0
+  '@sveltejs/adapter-netlify': 1.0.0-next.35
   '@sveltejs/kit': 1.0.0-next.192_svelte@3.44.0
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
@@ -86,6 +86,10 @@ packages:
     resolution: {integrity: sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==}
     dev: true
 
+  /@iarna/toml/2.2.5:
+    resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+    dev: true
+
   /@rollup/pluginutils/4.1.1:
     resolution: {integrity: sha512-clDjivHqWGXi7u+0d2r2sBi4Ie6VLEAzWMIkvJLnDmxoOhBYOTfzGbOQBA32THHm11/LiJbd01tJUpJsbshSWQ==}
     engines: {node: '>= 8.0.0'}
@@ -94,10 +98,11 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.0-next.0:
-    resolution: {integrity: sha512-CxjWlGkNyQzEB9LsXN+MvF1Z+SHRb16cNZL8sy5bUcytDcf7ETjlgKdaxks7ygWBhI/wtx4Mcxr+uIt50p8vag==}
+  /@sveltejs/adapter-netlify/1.0.0-next.35:
+    resolution: {integrity: sha512-3PC1RaRReu652ot+LC9EOjkebnZehdwvUm0zhPC8OFPJJccQwq6Y1kbHDeACIIFRTaKLIRBpuYh3idP6ffUGdw==}
     dependencies:
-      toml: 3.0.0
+      '@iarna/toml': 2.2.5
+      esbuild: 0.13.7
     dev: true
 
   /@sveltejs/kit/1.0.0-next.192_svelte@3.44.0:
@@ -1156,10 +1161,6 @@ packages:
 
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
-    dev: true
-
-  /toml/3.0.0:
-    resolution: {integrity: sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==}
     dev: true
 
   /type-check/0.4.0:
