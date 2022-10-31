@@ -1,4 +1,7 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
 	// import {lookupStop} from '$routes/api/arrival/index.doc.svelte';
 	let recentStops = []; // [{busStopCode:12,busStopName:abc}]
 
@@ -15,6 +18,11 @@
 
 	function clickRecentStop(busStopCode) {
 		console.log("click lorrr "+busStopCode);
+		dispatch('message', {
+			busStopCode: busStopCode
+		});
+		// document.querySelector('#busno-input').value = busStopCode;
+		// document.querySelector('#busno-search').click();
 		// lookupStop(busStopCode);
 		/**
 		try {
