@@ -8,7 +8,6 @@ const config = {
 	preprocess: [importAssets()],
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte',
 		adapter: adapter(),
 		files: {
 			serviceWorker: 'src/service-worker'
