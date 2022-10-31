@@ -11,6 +11,7 @@
 
 <script>
 	import moment from 'moment';
+	import { orderBy } from 'lodash';
 
 	let busNoInput = null;
 	let posts = {'Services':[]};
@@ -19,11 +20,14 @@
 	async function lookupStop(busNo) {
 		// alert(busNoInput);
 		busNoOutput = busNo;
-		posts = await fetch(`/api/arrival/`+busNo).then(r => r.json()).then(posts => {
-			return posts;
+		posts = await fetch(`/api/arrival/`+busNo).then(r => r.json()).then(arrivalData => {
+			
+			let sortedServices = orderBy(arrivalData.Services, [c => c.NextBus.EstimatedArrival ,"ServiceNo"], ["asc", "asc"]);
+			arrivalData.Services = sortedServices;
+	 		return arrivalData
 		});
 
-		recentStopsComponent.addRecentStop(busNo, busNo);
+		// recentStopsComponent.addRecentStop(busNo, busNo);
 	}
 
 	function lookupRecentStop(event) {
