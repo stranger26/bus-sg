@@ -34,9 +34,24 @@
 </script>
 
 <style>
-	ul {
+	.list {
 		margin: 0 0 1em 0;
 		line-height: 1.5;
+	}
+
+	.list-busno {
+		border: solid 1px black;
+		padding: 2px 4px;
+		display: inline-block;
+	}
+
+	.list-bustiming {
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	.dark-mode .list-busno {
+		border: solid 1px white;
 	}
 </style>
 
@@ -56,13 +71,13 @@ Errors?
 <input id="busno-input" type="number" max="999999" bind:value={busNoInput}>
 <button id="busno-search" on:click={lookupStop(busNoInput)}>Go</button>
 <p>{posts.Services.length} service(s) available</p>
-<ul>
+<div class="list">
 	{#each posts.Services as post}
 		<!--we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event
 		<li><a rel="prefetch" href="api/{post.slug}">{post.title}</a></li>-->
-		<li>{post.ServiceNo} {#if moment(post.NextBus.EstimatedArrival).isAfter(moment())}coming{:else}left{/if} {moment(post.NextBus.EstimatedArrival).fromNow()}{#if post.NextBus2.EstimatedArrival!=""}, next bus {#if moment(post.NextBus2.EstimatedArrival).isAfter(moment())}coming{:else}left{/if} {moment(post.NextBus2.EstimatedArrival).fromNow()}{/if}{#if post.NextBus3.EstimatedArrival!=""}, next bus {#if moment(post.NextBus3.EstimatedArrival).isAfter(moment())}coming{:else}left{/if} {moment(post.NextBus3.EstimatedArrival).fromNow()}{/if}</li>
+		<div class="list-item"><div class="list-busno">{post.ServiceNo}</div> <div class="list-bustiming">{moment(post.NextBus.EstimatedArrival).fromNow(true)}</div>{#if post.NextBus2.EstimatedArrival!=""}<div class="list-bustiming">{moment(post.NextBus2.EstimatedArrival).fromNow(true)}</div>{/if}{#if post.NextBus3.EstimatedArrival!=""}<div class="list-bustiming">{moment(post.NextBus3.EstimatedArrival).fromNow(true)}</div>{/if}</div>
 	{/each}
-</ul>
+</div>
