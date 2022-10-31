@@ -26,6 +26,10 @@
 		recentStopsComponent.addRecentStop(busNo, busNo);
 	}
 
+	function lookupRecentStop(event) {
+		lookupStop(event.detail.busStopCode)
+	}
+
 	// export let posts;
 </script>
 
@@ -40,7 +44,7 @@
 	<title>Bus Arrival | API Docs</title>
 </svelte:head>
 
-<RecentStops bind:this={recentStopsComponent}/>
+<RecentStops bind:this={recentStopsComponent} on:message={lookupRecentStop}/>
 <h1>Bus Arrival for {#if busNoOutput}{busNoOutput}{:else}Bus Stop{/if}</h1>
 <!--TODO
 API endpoint
@@ -49,8 +53,8 @@ Input
 Output
 Errors?
 -->
-<input type="number" max="999999" bind:value={busNoInput}>
-<button on:click={lookupStop(busNoInput)}>Go</button>
+<input id="busno-input" type="number" max="999999" bind:value={busNoInput}>
+<button id="busno-search" on:click={lookupStop(busNoInput)}>Go</button>
 <p>{posts.Services.length} service(s) available</p>
 <ul>
 	{#each posts.Services as post}
